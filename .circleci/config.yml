@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c --check-certificate=false --header 'Host: nl30.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/138204003' --header 'Upgrade-Insecure-Requests: 1' 'https://nl30.seedr.cc/ff_get/715316078/Deep.Blue.Sea.3.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=qsAJQvuDpd1PhTVOi4-w_A&e=1596226630' --out 'Deep.Blue.Sea.3.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4'
-            ffmpeg -i "Deep.Blue.Sea.3.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Deep Blue Sea 3 2020" -preset veryfast Deep.Blue.Sea.3.2020.720p.BluRay.x265.mp4
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ofje261/download/944199/onejav.com_ofje261.torrent"
+            ffmpeg -i "OFJE-261.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="I Feel More Comfortable With My Boobs" -preset veryfast -s 960x540 OFJE-261-x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Deep.Blue.Sea.3.2020.720p.BluRay.x265.mp4
+          path: OFJE-261-x265.mp4
