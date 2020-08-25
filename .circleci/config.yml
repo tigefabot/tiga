@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ofje263/download/527895/onejav.com_ofje263.torrent"
-            ffmpeg -i "OFJE-263.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="I Feel More Comfortable With My Boobs" -preset veryfast -s 960x540 OFJE-263-x265.mp4
+            aria2c "http://103.126.226.135:8080/download/Peninsula%20(2020)%20[720p]%20[WEBRip]%20[YTS.MX]/Peninsula.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4"
+            ffmpeg -i "Peninsula.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Peninsula 2020" -preset veryfast Peninsula.2020.720p.WEBRip.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: OFJE-263-x265.mp4
+          path: Peninsula.2020.720p.WEBRip.x265.mp4
