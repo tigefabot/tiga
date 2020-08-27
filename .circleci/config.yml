@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c "http://103.126.226.135:8080/download/Peninsula%20(2020)%20[720p]%20[WEBRip]%20[YTS.MX]/Peninsula.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4"
-            ffmpeg -i "Peninsula.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Peninsula 2020" -preset veryfast Peninsula.2020.720p.WEBRip.x265.mp4
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/937712B36BEB9F9E4A878C5ACCE72250C646443D"
+            ffmpeg -i "Project Power (2020) [720p] [WEBRip] [YTS.MX]/Project.Power.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Project Power 2020" -preset veryfast Project.Power.2020.720p.WEBRip.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Peninsula.2020.720p.WEBRip.x265.mp4
+          path: Project.Power.2020.720p.WEBRip.x265.mp4
