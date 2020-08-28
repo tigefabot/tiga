@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: "registry.gitlab.com/tigefa/ffmpeg"
+      - image: "ubuntu:18.04"
 
     steps:
       - checkout
@@ -17,8 +17,8 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c "http://103.126.226.135:8080/download/Memories%20Of%20The%20Sword%20(2015)/Memories.Of.The.Sword.2015.720p.BluRay.x264.[YTS.AG].mp4"
-            ffmpeg -i "Memories.Of.The.Sword.2015.720p.BluRay.x264.[YTS.AG].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Memories Of The Sword 2015" -preset veryfast Memories.Of.The.Sword.2015.720p.BluRay.x265.mp4
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/F502B071AC43CB499D01C3C33E6895CC598F4084"
+            ffmpeg -i "Memories Of The Sword (2015)/Memories.Of.The.Sword.2015.720p.BluRay.x264.[YTS.AG].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Memories Of The Sword 2015" -preset veryfast Memories.Of.The.Sword.2015.720p.BluRay.x265.mp4
             ls -hal
             speedtest --share --secure
 
