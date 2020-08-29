@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/supa537/download/478709/onejav.com_supa537.torrent"
-            ffmpeg -i "SUPA-537.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Graceful Big Breasts" -preset veryfast -s 960x540 SUPA-537.x265.mp4
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/8CD687357C0C37D654CEFF010DCCFDDA0C2C92C8"
+            ffmpeg -i "Steel Rain (2017) [BluRay] [720p] [YTS.AM]/Steel.Rain.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Steel Rain 2017" -preset veryfast Steel.Rain.2017.720p.BluRay.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: SUPA-537.x265.mp4
+          path: Steel.Rain.2017.720p.BluRay.x265.mp4
