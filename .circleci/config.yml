@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/8CD687357C0C37D654CEFF010DCCFDDA0C2C92C8"
-            ffmpeg -i "Steel Rain (2017) [BluRay] [720p] [YTS.AM]/Steel.Rain.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Steel Rain 2017" -preset veryfast Steel.Rain.2017.720p.BluRay.x265.mp4
+            aria2c --check-certificate=false --header 'Host: de13.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/141398873' --header 'Upgrade-Insecure-Requests: 1' 'https://de13.seedr.cc/ff_get/734455238/Man.of.Steel.2013.720p.BluRay.x264.YIFY.mp4?st=nSaOOILN2OXcQNN-vvlxxg&e=1598806314' --out 'Man.of.Steel.2013.720p.BluRay.x264.YIFY.mp4'
+            ffmpeg -i "Man.of.Steel.2013.720p.BluRay.x264.YIFY.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Man of Steel 2013" -preset veryfast Man.of.Steel.2013.720p.BluRay.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Steel.Rain.2017.720p.BluRay.x265.mp4
+          path: Man.of.Steel.2013.720p.BluRay.x265.mp4
