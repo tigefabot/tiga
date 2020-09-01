@@ -16,8 +16,7 @@ jobs:
           name: Downloading
           command: |
             aria2c --check-certificate=false --header 'Host: de6.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/141741677' --header 'Upgrade-Insecure-Requests: 1' 'https://de6.seedr.cc/ff_get/736575882/Fabricated.City.2017.720p.BluRay.x264-[YTS.AM].mp4?st=PsgGlEOd4dQHAaWnhhhj-g&e=1599067784' --out 'Fabricated.City.2017.720p.BluRay.x264-[YTS.AM].mp4'
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - setup_remote_docker
       - run:
           name: Rendering
           command: |
