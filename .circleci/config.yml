@@ -20,7 +20,7 @@ jobs:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg "Fabricated.City.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Fabricated City 2017" -preset veryfast Fabricated.City.2017.720p.BluRay.x265.mp4
+            ffmpeg -i "Fabricated.City.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Fabricated City 2017" -preset veryfast Fabricated.City.2017.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
