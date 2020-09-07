@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --check-certificate=false --header 'Host: nl37.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/141952032' --header 'Upgrade-Insecure-Requests: 1' 'https://nl37.seedr.cc/ff_get/737836871/Our.Body.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=ZGvQfNN08JJGJuKUtoC-eg&e=1599249643' --out 'Our.Body.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            aria2c --check-certificate=false --header 'Host: fr8.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/142401967' --header 'Upgrade-Insecure-Requests: 1' 'https://fr8.seedr.cc/ff_get/740405033/The.Wailing.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=3pXh7zZsxPJul_tW_wkj8w&e=1599595536' --out 'The.Wailing.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Our.Body.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Our Body 2018" -preset veryfast Our.Body.2018.720p.WEBRip.x265.mp4
+            ffmpeg -i "The.Wailing.2016.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Wailing 2016" -preset veryfast The.Wailing.2016.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Our.Body.2018.720p.WEBRip.x265.mp4
+          path: The.Wailing.2016.720p.BluRay.x265.mp4
