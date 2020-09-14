@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl37.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/143120540' --header 'Upgrade-Insecure-Requests: 1' 'https://nl37.seedr.cc/ff_get/744933388/Honest.Candidate.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=eAFIgru1QQnBEcvBJ1VFhA&e=1600196234' --out 'Honest.Candidate.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ssni850_2/download/163997/onejav.com_ssni850_2.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Honest.Candidate.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Honest Candidate 2020" -preset veryfast Honest.Candidate.2020.720p.WEBRip.x265.mp4
+            ffmpeg -i "SSNI-850.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Bring Me Home 2019" -preset veryfast -s 960x540 SSNI-850.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Honest.Candidate.2020.720p.WEBRip.x265.mp4
+          path: SSNI-850.x265.mp4
