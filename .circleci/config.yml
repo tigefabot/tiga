@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/9E1A13A14C54DC6F26493FA5006E230FC3FD9FF1"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/63B82BF8F0DCEC9923735C119C3FBF202901C6FF"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Inside Men (2015) [720p] [BluRay] [YTS.MX]/Inside.Men.2015.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Inside Men 2015" -preset veryfast Inside.Men.2015.720p.BluRay.x265.mp4
+            ffmpeg -i "Vaiennetut (2015) [720p] [BluRay] [YTS.MX]/Vaiennetut.2015.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Vaiennetut 2015" -preset veryfast Vaiennetut.2015.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Inside.Men.2015.720p.BluRay.x265.mp4
+          path: Vaiennetut.2015.720p.BluRay.x265.mp4
