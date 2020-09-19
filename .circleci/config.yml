@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ssni871_2/download/260354/onejav.com_ssni871_2.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ssni876_2/download/138500/onejav.com_ssni876_2.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "SSNI-871.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Mei Washio" -preset veryfast -s 960x540 SSNI-871.x265.mp4
+            ffmpeg -i "SSNI-876.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Amane Mahina" -preset veryfast -s 960x540 SSNI-876.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: SSNI-871.x265.mp4
+          path: SSNI-876.x265.mp4
