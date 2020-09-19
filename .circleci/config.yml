@@ -20,7 +20,7 @@ jobs:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "SSNI-871.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Mei Washio" -preset veryfast -s 960x540 SSNI-871.mp4
+            ffmpeg -i "SSNI-871.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Mei Washio" -preset veryfast -s 960x540 SSNI-871.x265.mp4
             ls -hal
 
       - store_artifacts:
