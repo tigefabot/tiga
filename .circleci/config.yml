@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/0F165397B30097C0312906DB7B9366A0511C6D38"
+            aria2c --header 'Host: nl37.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/143869213' --header 'Upgrade-Insecure-Requests: 1' 'https://nl37.seedr.cc/ff_get/749768235/Project.577.2012.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=1Tfuz8CRYbLSsgjARuUjfA&e=1600800960' --out 'Project.577.2012.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Marionette (2020) [720p] [WEBRip] [YTS.MX]/Marionette.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Marionette 2020" -preset veryfast Marionette.2020.720p.WEBRip.x265.mp4
+            ffmpeg -i "Project.577.2012.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Project 577 2012" -preset veryfast Project.577.2012.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Marionette.2020.720p.WEBRip.x265.mp4
+          path: Project.577.2012.720p.WEBRip.x265.mp4
