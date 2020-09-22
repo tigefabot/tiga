@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/jufe202/download/185372/onejav.com_jufe202.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/cesd928/download/982558/onejav.com_cesd928.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "JUFE-202.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Reina Taozono" -preset veryfast -s 960x540 JUFE-202.x265.mp4
+            ffmpeg -i "CESD-928.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Nene Tanaka ans Ai Shinkawa" -preset veryfast -s 960x540 CESD-928.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: JUFE-202.x265.mp4
+          path: CESD-928.x265.mp4
