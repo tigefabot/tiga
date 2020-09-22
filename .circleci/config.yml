@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl31.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic b3BlbnByb3h5OjM1MGVmZDI0ZWI2OTJiNWE=' --referer 'https://www.seedr.cc/files/143972404' --header 'Upgrade-Insecure-Requests: 1' 'https://nl31.seedr.cc/ff_get/750399878/FamilyTherapy.20.09.18.Katie.Monroe.Nikki.Sweet.Take.The.Family.Pill.XXX.480p.MP4XXX.mp4?st=Z0FGXFsJtVofr5VW_nkh9A&e=1600891012' --out 'FamilyTherapy.20.09.18.Katie.Monroe.Nikki.Sweet.Take.The.Family.Pill.XXX.480p.MP4XXX.mp4'
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/jufe202/download/185372/onejav.com_jufe202.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "FamilyTherapy.20.09.18.Katie.Monroe.Nikki.Sweet.Take.The.Family.Pill.XXX.480p.MP4XXX.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Katie Monroe and Nikki Sweet" -preset veryfast Katie.Monroe.Nikki.Sweet.x265.mp4
+            ffmpeg -i "JUFE-202.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Reina Taozono" -preset veryfast -s 960x540 JUFE-202.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Katie.Monroe.Nikki.Sweet.x265.mp4
+          path: JUFE-202.x265.mp4
