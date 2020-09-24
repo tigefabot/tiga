@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/pppd867/download/870122/onejav.com_pppd867.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/bgn060/download/794128/onejav.com_bgn060.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "PPPD-867.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Hitomi Tanaka" -preset veryfast -s 960x540 PPPD-867.x265.mp4
+            ffmpeg -i "BGN-060.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Nagisa Konomi" -preset veryfast -s 960x540 BGN-060.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: PPPD-867.x265.mp4
+          path: BGN-060.x265.mp4
