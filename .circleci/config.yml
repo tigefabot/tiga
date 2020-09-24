@@ -11,17 +11,17 @@ jobs:
           name: Requirements
           command: |
             apt-get update && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
-            apt-get install -yqq wget aria2 httpie ffmpeg speedtest-cli telnet lshw tree
+            apt-get install -yqq wget aria2 httpie ffmpeg speedtest-cli telnet lshw tree handbrake-cli
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/cesd928/download/982558/onejav.com_cesd928.torrent"
+            aria2c "https://www.dropbox.com/s/dl/ltqsrbqn32hon03/HTnNJ.mp4"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "CESD-928.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Nene Tanaka ans Ai Shinkawa" -preset veryfast -s 960x540 CESD-928.x265.mp4
+            ffmpeg -i "HTnNJ.mp4" --title "Hitomi Tanaka And Nadine J" --encoder x254 --turbo -o HTnNJ.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: CESD-928.x265.mp4
+          path: HTnNJ.x265.mp4
