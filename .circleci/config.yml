@@ -20,7 +20,7 @@ jobs:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "HTnNJ.mp4" --title "Hitomi Tanaka And Nadine J" --encoder x254 --turbo -o HTnNJ.x265.mp4
+            ffmpeg -i "HTnNJ.mp4" -t "Hitomi Tanaka And Nadine J" -e x254 -T -o HTnNJ.x265.mp4
             ls -hal
 
       - store_artifacts:
