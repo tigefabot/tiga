@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/oksn301/download/478716/onejav.com_oksn301.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "magnet:?xt=urn:btih:62b68ef7b55c2e50d43d3745f07caa118ed983ee&dn=%EC%95%85%EC%9D%98%EA%BD%83+-+%EA%B9%A8%EC%96%B4%EB%82%9C+%EC%A7%84%EC%8B%A4.E01.200903.720p-NEXT.mp4&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "OKSN-301.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="OKSN 301" -preset veryfast -s 960x540 OKSN-301.x265.mp4
+            ffmpeg -i "악의꽃 - 깨어난 진실.E01.200903.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Flower of Evil Special Episode 01" -preset veryfast -s 960x540 FOE.ES01.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: OKSN-301.x265.mp4
+          path: FOE.ES01.x265.mp4
