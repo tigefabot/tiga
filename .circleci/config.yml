@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c "http://103.27.207.48/download/%EC%95%85%EC%9D%98%EA%BD%83%20-%20%EA%B9%A8%EC%96%B4%EB%82%9C%20%EC%A7%84%EC%8B%A4.E01.200903.720p-NEXT.mp4"
+            aria2c --header 'Host: fr14.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/144292380' --header 'Upgrade-Insecure-Requests: 1' 'https://fr14.seedr.cc/ff_get/752371241/A.Special.Lady.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=O779PvqK5DPoYyKYL-1J7A&e=1601156444' --out 'A.Special.Lady.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "악의꽃 - 깨어난 진실.E01.200903.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Flower of Evil Special Episode 01" -preset veryfast -s 960x540 FOE.ES01.x265.mp4
+            ffmpeg -i "A.Special.Lady.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="A Special Lady 2017" -preset veryfast A.Special.Lady.2017.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: FOE.ES01.x265.mp4
+          path: A.Special.Lady.2017.720p.WEBRip.x265.mp4
