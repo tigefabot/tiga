@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/3DABA25FB28693D0CC9CE817651B5C7EB89855EE"
+            aria2c --check-certificate=false --header 'Host: de17.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/146443578' --header 'Upgrade-Insecure-Requests: 1' 'https://de17.seedr.cc/ff_get/766603680/Spider-Man.Homecoming.2017.720p.BluRay.x264-[YTS.AG].mp4?st=rT0uEYJgHYAUXaHlmJCLAQ&e=1602868691' --out 'Spider-Man.Homecoming.2017.720p.BluRay.x264-[YTS.AG].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "The Chase (2017) [BluRay] [720p] [YTS.AM]/The.Chase.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Chase 2017" -preset veryfast The.Chase.2017.720p.BluRay.x265.mp4
+            ffmpeg -i "Spider-Man.Homecoming.2017.720p.BluRay.x264-[YTS.AG].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Spider-Man Homecoming 2017" -preset veryfast Spider-Man.Homecoming.2017.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: The.Chase.2017.720p.BluRay.x265.mp4
+          path: Spider-Man.Homecoming.2017.720p.BluRay.x265.mp4
