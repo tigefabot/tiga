@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --check-certificate=false --header 'Host: de14.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/146545285' --header 'Upgrade-Insecure-Requests: 1' 'https://de14.seedr.cc/ff_get/767095358/Thor.2011.720p.BrRip.264.YIFY.mp4?st=SoytNwOKTXhUeJ4EjCmeYg&e=1602952674' --out 'Thor.2011.720p.BrRip.264.YIFY.mp4'
+            aria2c --check-certificate=false --header 'Host: de15.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/146545303' --header 'Upgrade-Insecure-Requests: 1' 'https://de15.seedr.cc/ff_get/767095414/Thor.The.Dark.World.2013.720p.BluRay.x264.YIFY.mp4?st=szJXAefQbzk7Y1iNfzF6DQ&e=1602952865' --out 'Thor.The.Dark.World.2013.720p.BluRay.x264.YIFY.mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Thor.2011.720p.BrRip.264.YIFY.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Thor 2011" -preset veryfast Thor.2011.720p.BrRip.265.mp4
+            ffmpeg -i "Thor.The.Dark.World.2013.720p.BluRay.x264.YIFY.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Thor The Dark World 2013" -preset veryfast Thor.The.Dark.World.2013.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Thor.2011.720p.BrRip.265.mp4
+          path: Thor.The.Dark.World.2013.720p.BluRay.x265.mp4
