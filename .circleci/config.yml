@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl27.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic SENkMTJiOTg1MTEwMTBiNjA2MzFhN2VmNDFlNmU2NzRmMC5oNzgzb2hhdzA5amRmMDpIQ2QxMmI5ODUxMTAxMGI2MDYzMWE3ZWY0MWU2ZTY3NGYwLmg3ODIzOWhk' --referer 'https://www.seedr.cc/files/146662439' --header 'Upgrade-Insecure-Requests: 1' 'https://nl27.seedr.cc/ff_get/767746630/Ava%20Addams.mp4?st=dRJeXoKaFLpAKuHgqZ2WIw&e=1603048601' --out 'Ava.Addams.mp4'
+            aria2c --header 'Host: nl27.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic SENkMTJiOTg1MTEwMTBiNjA2MzFhN2VmNDFlNmU2NzRmMC5oNzgzb2hhdzA5amRmMDpIQ2QxMmI5ODUxMTAxMGI2MDYzMWE3ZWY0MWU2ZTY3NGYwLmg3ODIzOWhk' --referer 'https://www.seedr.cc/files/146662439' --header 'Upgrade-Insecure-Requests: 1' 'https://nl27.seedr.cc/ff_get/767746627/Eva.Notty.and.Veronica.Avluv.mp4?st=mjYm3zvwV-xUnDuQd7JNOA&e=1603048816' --out 'Eva.Notty.and.Veronica.Avluv.mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Ava.Addams.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Ava Addams" -preset veryfast Ava.Addams.x265.mp4
+            ffmpeg -i "Eva.Notty.and.Veronica.Avluv.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Eva Notty and Veronica Avluv" -preset veryfast Eva.Notty.and.Veronica.Avluv.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Ava.Addams.x265.mp4
+          path: Eva.Notty.and.Veronica.Avluv.x265.mp4
