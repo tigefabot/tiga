@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/ADF4EACBC572E856C20FFF9424F6B2687BA40D04"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/09E34D0566E43E3B246B1DE85601CE56EE5CBFE4"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "The Trial Of The Chicago 7 (2020) [720p] [WEBRip] [YTS.MX]/The.Trial.Of.The.Chicago.7.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Trial Of The Chicago 7 2020" -preset veryfast The.Trial.Of.The.Chicago.7.2020.720p.WEBRip.x265.mp4
+            ffmpeg -i "The Devil All The Time (2020) [720p] [WEBRip] [YTS.MX]/The.Devil.All.The.Time.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Devil All The Time 2020" -preset veryfast The.Devil.All.The.Time.2020.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: The.Trial.Of.The.Chicago.7.2020.720p.WEBRip.x265.mp4
+          path: The.Devil.All.The.Time.2020.720p.WEBRip.x265.mp4
