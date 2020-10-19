@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl25.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/146856754' --header 'Upgrade-Insecure-Requests: 1' 'https://nl25.seedr.cc/ff_get/768930187/Air.Doll.2009.1080p.BluRay.x264-[YTS.AM].mp4?st=Dc-LGfT5L7qU7EdcHEJX3Q&e=1603217075' --out 'Air.Doll.2009.1080p.BluRay.x264-[YTS.AM].mp4'
+            aria2c --header 'Host: nl22.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/146863577' --header 'Upgrade-Insecure-Requests: 1' 'https://nl22.seedr.cc/ff_get/768975624/A.Babysitters.Guide.To.Monster.Hunting.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=7Dx6g3HJ9PK7kVU6brdjIA&e=1603221883' --out 'A.Babysitters.Guide.To.Monster.Hunting.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Air.Doll.2009.1080p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Air Doll 2009" -preset veryfast -s 1280x534 Air.Doll.2009.720p.BluRay.x265.mp4
+            ffmpeg -i "A.Babysitters.Guide.To.Monster.Hunting.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="A Babysitters Guide To Monster Hunting 2020" -preset veryfast A.Babysitters.Guide.To.Monster.Hunting.2020.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Air.Doll.2009.720p.BluRay.x265.mp4
+          path: A.Babysitters.Guide.To.Monster.Hunting.2020.720p.WEBRip.x265.mp4
