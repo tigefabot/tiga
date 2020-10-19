@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl27.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:81.0) Gecko/20100101 Firefox/81.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic SENkMTJiOTg1MTEwMTBiNjA2MzFhN2VmNDFlNmU2NzRmMC5oNzgzb2hhdzA5amRmMDpIQ2QxMmI5ODUxMTAxMGI2MDYzMWE3ZWY0MWU2ZTY3NGYwLmg3ODIzOWhk' --referer 'https://www.seedr.cc/files/146662439' --header 'Upgrade-Insecure-Requests: 1' 'https://nl27.seedr.cc/ff_get/767746627/Eva.Notty.and.Veronica.Avluv.mp4?st=mjYm3zvwV-xUnDuQd7JNOA&e=1603048816' --out 'Eva.Notty.and.Veronica.Avluv.mp4'
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/40BBAEBC0F1AF62640A7D067111C4A6CB2545419"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Eva.Notty.and.Veronica.Avluv.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Eva Notty and Veronica Avluv" -preset veryfast Eva.Notty.and.Veronica.Avluv.x265.mp4
+            ffmpeg -i "Love And Monsters (2020) [720p] [WEBRip] [YTS.MX]/Love.And.Monsters.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Love And Monsters 2020" -preset veryfast Love.And.Monsters.2020.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Eva.Notty.and.Veronica.Avluv.x265.mp4
+          path: Love.And.Monsters.2020.720p.WEBRip.x265.mp4
