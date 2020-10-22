@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/lzdq019/download/126544/onejav.com_lzdq019.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/dandy733/download/033939/onejav.com_dandy733.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "LZDQ-019.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Kurumi Shiiki X China Chikina" -preset veryfast -s 960x540 LZDQ-019.x265.mp4
+            ffmpeg -i "DANDY-733.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Yuria Yoshine X Alisa Hanyu Arisa Hanyu" -preset veryfast -s 960x540 DANDY-733.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: LZDQ-019.x265.mp4
+          path: DANDY-733.x265.mp4
