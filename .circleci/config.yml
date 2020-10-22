@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/ofje279/download/836275/onejav.com_ofje279.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/onsg027/download/584969/onejav.com_onsg027.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "OFJE-279.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Anzai Rara 1st BEST" -preset veryfast -s 960x540 OFJE-279.x265.mp4
+            ffmpeg -i "ONSG-027.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Deriheru Hikari" -preset veryfast -s 960x540 ONSG-027.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: OFJE-279.x265.mp4
+          path: ONSG-027.x265.mp4
