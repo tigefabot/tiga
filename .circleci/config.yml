@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/onsg027/download/584969/onejav.com_onsg027.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/lzdq019/download/126544/onejav.com_lzdq019.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "ONSG-027.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Deriheru Hikari" -preset veryfast -s 960x540 ONSG-027.x265.mp4
+            ffmpeg -i "LZDQ-019.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Kurumi Shiiki X China Chikina" -preset veryfast -s 960x540 LZDQ-019.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: ONSG-027.x265.mp4
+          path: LZDQ-019.x265.mp4
