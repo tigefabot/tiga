@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/86C503645656712F186D6281748521866AF9DED9"
+            aria2c --header 'Host: nl29.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/148387492' --header 'Upgrade-Insecure-Requests: 1' 'https://nl29.seedr.cc/ff_get/778619819/Unhinged.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=oQg32k-EwjZRt1kUjvvQOA&e=1604429390' --out 'Unhinged.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "The Longest Yard (2005)/The Longest Yard (2005) 720p BrRip x264 YIFY.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Longest Yard 2005" -preset veryfast The.Longest.Yard.2005.720p.BrRip.x265.mp4
+            ffmpeg -i "Unhinged.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Unhinged 2020" -preset veryfast Unhinged.2020.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: The.Longest.Yard.2005.720p.BrRip.x265.mp4
+          path: Unhinged.2020.720p.WEBRip.x265.mp4
