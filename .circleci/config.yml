@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/sdab155/download/613315/onejav.com_sdab155.torrent"
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/mimk076_2/download/804330/onejav.com_mimk076_2.torrent"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "SDAB-155.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Maria Himesaki" -preset veryfast SDAB-155.x265.mp4
+            ffmpeg -i "MIMK-076.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Ruka Inaba" -preset veryfast MIMK-076.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: SDAB-155.x265.mp4
+          path: MIMK-076.x265.mp4
