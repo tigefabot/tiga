@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl36.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/148839613' --header 'Upgrade-Insecure-Requests: 1' 'https://nl36.seedr.cc/ff_get/781269936/The.Lost.Choices.2015.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=fgtkoLUmiqzOvf_SCG7q6w&e=1604850913' --out 'The.Lost.Choices.2015.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            aria2c --header 'Host: nl22.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/148840644' --header 'Upgrade-Insecure-Requests: 1' 'https://nl22.seedr.cc/ff_get/781276116/Batman.VsRobin.2015.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4?st=nHHrdXYwNpxGcvpzp7giMw&e=1604851585' --out 'Batman.VsRobin.2015.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "The.Lost.Choices.2015.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Lost Choices 2015" -preset veryfast The.Lost.Choices.2015.720p.WEBRip.x265.mp4
+            ffmpeg -i "Batman.VsRobin.2015.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Batman Vs Robin 2015" -preset veryfast Batman.VsRobin.2015.1080p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: The.Lost.Choices.2015.720p.WEBRip.x265.mp4
+          path: Batman.VsRobin.2015.1080p.BluRay.x265.mp4
