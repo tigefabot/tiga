@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: de16.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149051464' --header 'Upgrade-Insecure-Requests: 1' 'https://de16.seedr.cc/ff_get/782515868/Rango.2009.720p.BrRip.x264.YIFY.mp4?st=DhZk22pBV_jWu9GhQFyOBA&e=1605026879' --out 'Rango.2009.720p.BrRip.x264.YIFY.mp4'
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/54B15477D9602F3E6383D4974D42D88C893C450C"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Rango.2009.720p.BrRip.x264.YIFY.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Rango 2009" -preset veryfast Rango.2009.720p.BrRip.x265.mp4
+            ffmpeg -i "Fantastic Beasts The Crimes Of Grindelwald (2018) [BluRay] [720p] [YTS.AM]/Fantastic.Beasts.The.Crimes.Of.Grindelwald.2018.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Fantastic Beasts The Crimes Of Grindelwald 2018" -preset veryfast Fantastic.Beasts.The.Crimes.Of.Grindelwald.2018.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Rango.2009.720p.BrRip.x265.mp4
+          path: Fantastic.Beasts.The.Crimes.Of.Grindelwald.2018.720p.BluRay.x265.mp4
