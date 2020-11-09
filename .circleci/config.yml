@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl21.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149049993' --header 'Upgrade-Insecure-Requests: 1' 'https://nl21.seedr.cc/ff_get/782509494/Detective.K.Secret.Of.The.Living.Dead.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=FYpH74Ho3Y-kN8WZgYAqpQ&e=1605025958' --out 'Detective.K.Secret.Of.The.Living.Dead.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            aria2c --header 'Host: fr9.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149050125' --header 'Upgrade-Insecure-Requests: 1' 'https://fr9.seedr.cc/ff_get/782509888/Me.And.Me.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=fYI9mcYqEx4a_IEZXcKMCw&e=1605026144' --out 'Me.And.Me.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Detective.K.Secret.Of.The.Living.Dead.2018.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Detective K Secret Of The.Living Dead 2018" -preset veryfast Detective.K.Secret.Of.The.Living.Dead.2018.720p.WEBRip.x265.mp4
+            ffmpeg -i "Me.And.Me.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Me And Me 2020" -preset veryfast Me.And.Me.2020.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Detective.K.Secret.Of.The.Living.Dead.2018.720p.WEBRip.x265.mp4
+          path: Me.And.Me.2020.720p.BluRay.x265.mp4
