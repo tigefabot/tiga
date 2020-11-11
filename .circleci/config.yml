@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: de16.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149263326' --header 'Upgrade-Insecure-Requests: 1' 'https://de16.seedr.cc/ff_get/783752303/Wonder.Woman.Bloodlines.2019.720p.BluRay.x264-[YTS.LT].mp4?st=ZXWdoo45ILxLTWEgwnQkTg&e=1605204737' --out 'Wonder.Woman.Bloodlines.2019.720p.BluRay.x264-[YTS.LT].mp4'
+            aria2c --header 'Host: de16.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149265031' --header 'Upgrade-Insecure-Requests: 1' 'https://de16.seedr.cc/ff_get/783757645/The.Death.And.Return.Of.Superman.2019.720p.BluRay.x264-[YTS.LT].mp4?st=sVglw7Z0iswgTJwCsaYK9A&e=1605205701' --out 'The.Death.And.Return.Of.Superman.2019.720p.BluRay.x264-[YTS.LT].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Wonder.Woman.Bloodlines.2019.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Wonder Woman Bloodlines 2019" -preset veryfast Wonder.Woman.Bloodlines.2019.720p.BluRay.x265.mp4
+            ffmpeg -i "The.Death.And.Return.Of.Superman.2019.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Death And Return Of Superman 2019" -preset veryfast The.Death.And.Return.Of.Superman.2019.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Wonder.Woman.Bloodlines.2019.720p.BluRay.x265.mp4
+          path: The.Death.And.Return.Of.Superman.2019.720p.BluRay.x265.mp4
