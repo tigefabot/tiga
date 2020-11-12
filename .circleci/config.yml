@@ -20,8 +20,8 @@ jobs:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Tale.of.the.Nine.Tailed.E11.201111.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Tale of the Nine Tailed Episode 11" -preset veryfast E11.x265.mp4
+            ffmpeg -i "Tale.of.the.Nine.Tailed.E11.201111.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Tale of the Nine Tailed Episode 11" -preset veryfast -s 854x480 E11.x265.mkv
             ls -hal
 
       - store_artifacts:
-          path: E11.x265.mp4
+          path: E11.x265.mkv
