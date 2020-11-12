@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/jul370_2/download/336439/onejav.com_jul370_2.torrent"
+            aria2c "https://www.dropbox.com/s/dl/jhzxpv2aadhx2nt/Tale.of.the.Nine.Tailed.E11.201111.720p-NEXT.mp4"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "JUL-370.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Reiko Kobayakawa" -preset veryfast JUL-370.x265.mp4
+            ffmpeg -i "Tale.of.the.Nine.Tailed.E11.201111.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Tale of the Nine Tailed Episode 11" -preset veryfast E11.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: JUL-370.x265.mp4
+          path: E11.x265.mp4
