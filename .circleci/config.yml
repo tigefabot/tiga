@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl20.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149423441' --header 'Upgrade-Insecure-Requests: 1' 'https://nl20.seedr.cc/ff_get/784583781/Long.Live.The.King.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=qM22jftqljn292NYiYNsPg&e=1605333912' --out 'Long.Live.The.King.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            aria2c --header 'Host: nl20.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149423682' --header 'Upgrade-Insecure-Requests: 1' 'https://nl20.seedr.cc/ff_get/784585192/The.New.Mutants.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=b0vedUFzVGk64a2cDXGCxw&e=1605334076' --out 'The.New.Mutants.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Long.Live.The.King.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Long Live The King 2019" -preset veryfast Long.Live.The.King.2019.720p.WEBRip.x265.mp4
+            ffmpeg -i "The.New.Mutants.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The New Mutants 2020" -preset veryfast The.New.Mutants.2020.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Long.Live.The.King.2019.720p.WEBRip.x265.mp4
+          path: The.New.Mutants.2020.720p.BluRay.x265.mp4
