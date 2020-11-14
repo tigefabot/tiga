@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl38.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149532119' --header 'Upgrade-Insecure-Requests: 1' 'https://nl38.seedr.cc/ff_get/785135030/Last.Three.Days.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4?st=15OE-MjQ_BsLqhsj559kXw&e=1605409536' --out 'Last.Three.Days.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4'
+            aria2c --header 'Host: fr8.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149533191' --header 'Upgrade-Insecure-Requests: 1' 'https://fr8.seedr.cc/ff_get/785144397/Dolittle.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=LhzKmaCf4QpaNFvPAKM8IA&e=1605410569' --out 'Dolittle.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Last.Three.Days.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Train To Busan 2016" -preset veryfast -s 1280x598 Last.Three.Days.2020.720p.WEBRip.x265.mp4
+            ffmpeg -i "Dolittle.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Dolittle 2020" -preset veryfast Dolittle.2020.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: Last.Three.Days.2020.720p.WEBRip.x265.mp4
+          path: Dolittle.2020.720p.BluRay.x265.mp4
