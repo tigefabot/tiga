@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: de14.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149537149' --header 'Upgrade-Insecure-Requests: 1' 'https://de14.seedr.cc/ff_get/785165948/Iron.Man.2008.720p.BrRip.x264.YIFY.mp4?st=Qz9YjvHfBN4xUIKX3a9qeA&e=1605413648' --out 'Iron.Man.2008.720p.BrRip.x264.YIFY.mp4'
+            aria2c --header 'Host: de15.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149537165' --header 'Upgrade-Insecure-Requests: 1' 'https://de15.seedr.cc/ff_get/785165983/Iron.Man.II.x264.720p.mkv?st=BmA2uedlAHzpzUNQbiMdKw&e=1605413879' --out 'Iron.Man.II.x264.720p.mkv'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "Iron.Man.2008.720p.BrRip.x264.YIFY.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Iron Man 2008" -preset veryfast Iron.Man.2008.720p.BrRip.x265.mp4
+            ffmpeg -i "Iron.Man.II.x264.720p.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Iron Man II 2010" -preset veryfast Iron.Man.II.x265.720p.mkv
             ls -hal
 
       - store_artifacts:
-          path: Iron.Man.2008.720p.BrRip.x265.mp4
+          path: Iron.Man.II.x265.720p.mkv
