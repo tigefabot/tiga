@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: de10.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149850970' --header 'Upgrade-Insecure-Requests: 1' 'https://de10.seedr.cc/ff_get/786794776/A.Taxi.Driver.2017.720p.BluRay.x264-[YTS.AM].mp4?st=IcCnLaRcbHkyBm1L7-VCrg&e=1605638939' --out 'A.Taxi.Driver.2017.720p.BluRay.x264-[YTS.AM].mp4'
+            aria2c --header 'Host: nl20.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149851008' --header 'Upgrade-Insecure-Requests: 1' 'https://nl20.seedr.cc/ff_get/786794909/The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4?st=ZMFtJ17GUBpSW-CfuHbcbQ&e=1605639042' --out 'The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4'
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "A.Taxi.Driver.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="A Taxi Driver 2017" -preset veryfast A.Taxi.Driver.2017.720p.BluRay.x265.mp4
+            ffmpeg -i "The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Age Of Shadows 2016" -preset veryfast The.Age.Of.Shadows.2016.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: A.Taxi.Driver.2017.720p.BluRay.x265.mp4
+          path: The.Age.Of.Shadows.2016.720p.BluRay.x265.mp4
