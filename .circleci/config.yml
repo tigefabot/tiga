@@ -15,13 +15,13 @@ jobs:
       - run:
           name: Downloading
           command: |
-            aria2c --header 'Host: nl20.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/149851008' --header 'Upgrade-Insecure-Requests: 1' 'https://nl20.seedr.cc/ff_get/786794909/The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4?st=ZMFtJ17GUBpSW-CfuHbcbQ&e=1605639042' --out 'The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4'
+            aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/B000DEF51B0B88A79AC63D6D2BDB549BC84DEBA1"
       - run:
           name: Rendering
           command: |
             ulimit -c unlimited
-            ffmpeg -i "The.Age.Of.Shadows.2016.720p.BluRay.x264-[YTS.AG].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Age Of Shadows 2016" -preset veryfast The.Age.Of.Shadows.2016.720p.BluRay.x265.mp4
+            ffmpeg -i "Door Lock (2018) [720p] [BluRay] [YTS.MX]/Door.Lock.2018.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Door Lock 2018" -preset veryfast Door.Lock.2018.720p.BluRay.x265.mp4
             ls -hal
 
       - store_artifacts:
-          path: The.Age.Of.Shadows.2016.720p.BluRay.x265.mp4
+          path: Door.Lock.2018.720p.BluRay.x265.mp4
