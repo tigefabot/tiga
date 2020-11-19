@@ -23,7 +23,7 @@ jobs:
           name: Rendering
           command: |
             ulimit -c unlimited
-            HandBrakeCLI -i "Dont.Click.2012.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -e x265 -o Dont.Click.2012.720p.WEBRip.x265.mp4
+            HandBrakeCLI -i "Dont.Click.2012.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -e x265 --two-pass --turbo -o Dont.Click.2012.720p.WEBRip.x265.mp4
             ls -hal
 
       - store_artifacts:
