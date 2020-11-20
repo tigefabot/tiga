@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --check-certificate=false --max-connection-per-server=5 --min-split-size=10M "http://103.89.0.175/Marlina.The.Murderer.In.Four.Acts.2017.720p.BluRay.x264-[YTS.LT].mp4"
+          aria2c --check-certificate=false --max-connection-per-server=5 --min-split-size=10M --header 'Host: nl21.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150247915' --header 'Upgrade-Insecure-Requests: 1' 'https://nl21.seedr.cc/ff_get/788928907/MrLuckyPOV.20.10.16.Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.MP4-KLEENEX.mp4?st=AzWpQYbNBRtaBnKO83LNdg&e=1605972971' --out 'MrLuckyPOV.20.10.16.Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.MP4-KLEENEX.mp4'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Marlina.The.Murderer.In.Four.Acts.2017.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Marlina The Murderer In Four Acts 2017" -preset veryfast Marlina.The.Murderer.In.Four.Acts.2017.720p.BluRay.x265.mp4
+          ffmpeg -i "MrLuckyPOV.20.10.16.Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.MP4-KLEENEX.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="MrLuckyPOV.20.10.16.Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.MP4-KLEENEX" -preset veryfast Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.mp4
           ls -hal
     - store_artifacts:
-        path: Marlina.The.Murderer.In.Four.Acts.2017.720p.BluRay.x265.mp4
+        path: Alex.Chance.Titfuck.Fun.With.Incredible.Chest.XXX.SD.mp4
 workflows:
   version: 2
   workflow:
