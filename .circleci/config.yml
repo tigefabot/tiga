@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --check-certificate=false --max-connection-per-server=5 --min-split-size=10M --header 'Host: fr4.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150681154' --header 'Upgrade-Insecure-Requests: 1' 'https://fr4.seedr.cc/ff_get/791422588/Girl.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=dBR-T0bQGGw-fGE9wPzJGw&e=1606314764' --out 'Girl.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+          aria2c --check-certificate=false --max-connection-per-server=5 --min-split-size=10M --header 'Host: fr10.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150681340' --header 'Upgrade-Insecure-Requests: 1' 'https://fr10.seedr.cc/ff_get/791423887/Let.Him.Go.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=FFjO1DVJn-Nf68uS8hbOOA&e=1606314889' --out 'Let.Him.Go.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Girl.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Girl 2020" -preset veryfast Girl.2020.720p.WEBRip.x265.mp4
+          ffmpeg -i "Let.Him.Go.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Let Him Go 2020" -preset veryfast Let.Him.Go.2020.720p.WEBRip.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Girl.2020.720p.WEBRip.x265.mp4
+        path: Let.Him.Go.2020.720p.WEBRip.x265.mp4
 workflows:
   version: 2
   workflow:
