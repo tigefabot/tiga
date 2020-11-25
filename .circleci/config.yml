@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=10M --header 'Host: de16.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150764609' --header 'Upgrade-Insecure-Requests: 1' 'https://de16.seedr.cc/ff_get/791883308/Harry_Potter_and_the_Chamber_of_Secrets_2002.mkv?st=YrW8skDgIaFC-cZKYpfFeA&e=1606384184' --out 'Harry_Potter_and_the_Chamber_of_Secrets_2002.mkv'
+          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=10M --header 'Host: de17.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150764642' --header 'Upgrade-Insecure-Requests: 1' 'https://de17.seedr.cc/ff_get/791883387/Harry_Potter_and_the_Prisoner_of_Azkaban_2004.mkv?st=rcW8Yl8jZ36LDI4_wMBJ3Q&e=1606384361' --out 'Harry_Potter_and_the_Prisoner_of_Azkaban_2004.mkv'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Harry_Potter_and_the_Chamber_of_Secrets_2002.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Harry Potter and the Chamber of Secrets 2002" -preset veryfast Harry.Potter.and.the.Chamber.of.Secrets.2002.x265.mkv
+          ffmpeg -i "Harry_Potter_and_the_Prisoner_of_Azkaban_2004.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Harry Potter and the Prisoner of Azkaban 2004" -preset veryfast Harry.Potter.and.the.Prisoner.of.Azkaban.2004.x265.mkv
           ls -hal
     - store_artifacts:
-        path: Harry.Potter.and.the.Chamber.of.Secrets.2002.x265.mkv
+        path: Harry.Potter.and.the.Prisoner.of.Azkaban.2004.x265.mkv
 workflows:
   version: 2
   workflow:
