@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=10M "http://103.89.0.175/Harry.Potter.And.The.Deathly.Hallows.Part.2.2011.720p.BrRip.264.YIFY.mkv-muxed.mp4"
+          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=10M --header 'Host: nl30.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/150897957' --header 'Upgrade-Insecure-Requests: 1' 'https://nl30.seedr.cc/ff_get/792575042/The.Concubine.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=bb1CHQZKp2v_fuMVk9LMxQ&e=1606488282' --out 'The.Concubine.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Harry.Potter.And.The.Deathly.Hallows.Part.2.2011.720p.BrRip.264.YIFY.mkv-muxed.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Harry Potter And The Deathly Hallows Part 2 2011" -preset veryfast Harry.Potter.And.The.Deathly.Hallows.Part.2.2011.720p.BrRip.265.mkv
+          ffmpeg -i "The.Concubine.2012.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Concubine 2012" -preset veryfast The.Concubine.2012.720p.BluRay.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Harry.Potter.And.The.Deathly.Hallows.Part.2.2011.720p.BrRip.265.mkv
+        path: The.Concubine.2012.720p.BluRay.x265.mp4
 workflows:
   version: 2
   workflow:
