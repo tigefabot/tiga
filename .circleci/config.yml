@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=100M "http://103.89.0.175/VEO-035.mp4"
+          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=100M "http://103.89.0.175/SSNI-890.mp4"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "VEO-035.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Sayuri Mitsumoto" -preset veryfast -s 960x540 VEO-035.x265.mp4
+          ffmpeg -i "SSNI-890.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Aika Yumeno" -preset veryfast -s 960x540 SSNI-890.x265.mp4
           ls -hal
     - store_artifacts:
-        path: VEO-035.x265.mp4
+        path: SSNI-890.x265.mp4
 workflows:
   version: 2
   workflow:
