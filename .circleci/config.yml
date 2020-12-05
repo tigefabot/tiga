@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/189C8D262D74177515646EB4826FC234D538E547"
+          aria2c --check-certificate=false --max-connection-per-server=16 --min-split-size=100M --header 'Host: fr4.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/151915916' --header 'Upgrade-Insecure-Requests: 1' 'https://fr4.seedr.cc/ff_get/798315974/RV.Resurrected.Victims.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=9rWiFAO_LxLjZ1n7VR3LWA&e=1607273697' --out 'RV.Resurrected.Victims.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Ashfall (2019) [720p] [BluRay] [YTS.MX]/Ashfall.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Ashfall 2019" -preset veryfast Ashfall.2019.720p.BluRay.x265.mp4
+          ffmpeg -i "RV.Resurrected.Victims.2017.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="RV Resurrected Victims 2017" -preset veryfast RV.Resurrected.Victims.2017.720p.WEBRip.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Ashfall.2019.720p.BluRay.x265.mp4
+        path: RV.Resurrected.Victims.2017.720p.WEBRip.x265.mp4
 workflows:
   version: 2
   workflow:
