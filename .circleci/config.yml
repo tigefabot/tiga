@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/9ACA38C0335CB7E780FD29E43EDEE946D992A418"
+          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/33AC04523073CE743D74E297BE0D5968BD1286A0"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "A Hard Day (2014) [BluRay] [720p] [YTS.AM]/A.Hard.Day.2014.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="A Hard Day 2014" -preset veryfast A.Hard.Day.2014.720p.BluRay.x265.mp4
+          ffmpeg -i "Pandora (2016) [BluRay] [720p] [YTS.AM]/A.Hard.Day.2014.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Pandora 2016" -preset veryfast Pandora.2016.720p.BluRay.x265.mp4
           ls -hal
     - store_artifacts:
-        path: A.Hard.Day.2014.720p.BluRay.x265.mp4
+        path: Pandora.2016.720p.BluRay.x265.mp4
 workflows:
   version: 2
   workflow:
