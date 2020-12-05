@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/24A3D9DE917882A910ED9FD81E77280C9BEC5701"
+          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/697C10149669FAE0B89F76F705F2F228EE22B322"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "The Prison (2017) [720p] [BluRay] [YTS.MX]/The.Prison.2017.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Prison 2017" -preset veryfast The.Prison.2017.720p.BluRay.x265.mp4
+          ffmpeg -i "Flu (2013) [720p] [BluRay] [YTS.MX]/Flu.2013.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Flu 2013" -preset veryfast Flu.2013.720p.BluRay.x265.mp4
           ls -hal
     - store_artifacts:
-        path: The.Prison.2017.720p.BluRay.x265.mp4
+        path: Flu.2013.720p.BluRay.x265.mp4
 workflows:
   version: 2
   workflow:
