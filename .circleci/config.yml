@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/2B2D6C8DE568060A2C86F4178790D4B8D61CEEF2"
+          aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/A8E38BE786A5578F92579991D6AAF00749AE35E7"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Nameless Gangster Rules Of The Time (2012) [BluRay] [720p] [YTS.LT]/Nameless.Gangster.Rules.Of.The.Time.2012.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Nameless Gangster Rules Of The Time 2012" -preset veryfast Nameless.Gangster.Rules.Of.The.Time.2012.720p.BluRay.x265.mp4
+          ffmpeg -i "Sex Is Zero (2002) [BluRay] [720p] [YTS.LT]/Sex.Is.Zero.2002.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Sex Is Zero 2002" -preset veryfast Sex.Is.Zero.2002.720p.BluRay.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Nameless.Gangster.Rules.Of.The.Time.2012.720p.BluRay.x265.mp4
+        path: Sex.Is.Zero.2002.720p.BluRay.x265.mp4
 workflows:
   version: 2
   workflow:
