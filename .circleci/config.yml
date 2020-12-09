@@ -13,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-         aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/57919BF8298BA06B591F0F709636BE74C3490173"
+         aria2c --bt-max-peers=0 --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/F3DE2DF7DE2A9D997AF38CCD9ADDA0D35E931813"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Whistle Blower (2014) [1080p] [WEBRip] [YTS.MX]/Whistle.Blower.2014.1080p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Whistle Blower 2014" -preset veryfast Whistle.Blower.2014.1080p.WEBRip.x265.mp4
+          ffmpeg -i "Pirates (2014) [1080p] [BluRay] [5.1] [YTS.MX]/Pirates.2014.1080p.BluRay.x264.AAC5.1-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Pirates 2014" -preset veryfast Pirates.2014.1080p.BluRay.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Whistle.Blower.2014.1080p.WEBRip.x265.mp4
+        path: Pirates.2014.1080p.BluRay.x265.mp4
 workflows:
   version: 2
   workflow:
