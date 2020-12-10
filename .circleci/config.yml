@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: registry.gitlab.com/tigefa/ffmpeg:latest
+    - image: registry.gitlab.com/tigefa/ffmpeg
     steps:
     - checkout
     - run:
