@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: docker.pkg.github.com/tigefabot/ubuntu/20.04:latest
+    - image: registry.gitlab.com/tigefa/ffmpeg:latest
       auth:
         username: $GITHUB_USERNAME
         password: $GITHUB_PASSWORD
