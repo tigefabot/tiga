@@ -3,9 +3,6 @@ jobs:
   build:
     docker:
     - image: registry.gitlab.com/tigefa/ffmpeg:latest
-      auth:
-        username: $GITHUB_USERNAME
-        password: $GITHUB_PASSWORD
     steps:
     - checkout
     - run:
@@ -16,15 +13,15 @@ jobs:
     - run:
         name: Downloading
         command: |
-         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 "https://tigefa.my.id/MUCH-116.mp4"
+         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 "https://tigefa.my.id/MOT-289.mp4"
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "MUCH-116.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Special S Class Body Girls 10 People Continuous Sex" -preset veryfast MUCH-116.x265.mp4
+          ffmpeg -i "MOT-289.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Yuuka Shimada" -preset veryfast MOT-289.x265.mp4
           ls -hal
     - store_artifacts:
-        path: MUCH-116.x265.mp4
+        path: MOT-289.x265.mp4
 workflows:
   version: 2
   workflow:
