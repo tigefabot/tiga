@@ -18,7 +18,7 @@ jobs:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Running.Man.E533.201213.1080p-NEXT.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Running Man Episode 533" -preset veryfast 533.mkv
+          ffmpeg -i "Running.Man.E533.201213.1080p-NEXT.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Running Man Episode 533" -preset veryfast -s 1280x720 533.mkv
           ls -hal
     - store_artifacts:
         path: 533.mkv
