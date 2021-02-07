@@ -3,10 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker.pkg.github.com/5u9/test/ubuntu:18.04
-        auth:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD  # context / project UI env-var reference
+      - image: registry.gitlab.com/tigefa/ffmpeg
     steps:
     - checkout
     - run:
