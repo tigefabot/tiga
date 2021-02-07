@@ -14,7 +14,7 @@ jobs:
     - run:
         name: Downloading
         command: |
-         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 'https://www.dropbox.com/s/dl/8vxrte6w5c9j0ko/FC2-PPV-1672362.mp4
+         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 'https://www.dropbox.com/s/dl/8vxrte6w5c9j0ko/FC2-PPV-1672362.mp4'
     - run:
         name: Rendering
         command: |
