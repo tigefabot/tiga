@@ -2,26 +2,28 @@ version: 2
 jobs:
   build:
     docker:
-    - image: registry.gitlab.com/tigefa/ffmpeg:latest
+      - image: docker.pkg.github.com/5u9/test/alpine:latest
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD  # context / project UI env-var reference
     steps:
     - checkout
     - run:
         name: Requirements
         command: |
-          apt-get update && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
-          apt-get install -yqq wget aria2 ffmpeg speedtest-cli telnet lshw tree
+          apk add ffmpeg aria2
     - run:
         name: Downloading
         command: |
-         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 https://www.dropbox.com/s/dl/gftv3g71v6o9zrd/Invitation.Girl.2.2019.720p.HDRip.H264.mkv
+         aria2c --check-certificate=false --min-split-size=100M --max-concurrent-downloads=16 --max-connection-per-server=16 'https://www.dropbox.com/s/dl/oo2i429y86u6dpd/YAKO-021.mp4'
     - run:
         name: Rendering
         command: |
           ulimit -c unlimited
-          ffmpeg -i "Invitation.Girl.2.2019.720p.HDRip.H264.mkv" -threads 16 -c:v libx265 -c:a copy -metadata title="Invitation Girl 2 2019" -preset veryfast Invitation.Girl.2.2019.720p.HDRip.x265.mkv
+          ffmpeg -i "YAKO-021.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Woman Rin" -preset veryfast -s 1280x720 YAKO-021.x265.mp4
           ls -hal
     - store_artifacts:
-        path: Invitation.Girl.2.2019.720p.HDRip.x265.mkv
+        path: YAKO-021.x265.mp4
 workflows:
   version: 2
   workflow:
