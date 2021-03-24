@@ -1,4 +1,4 @@
-aws_credentials: ENCRYPTED[c9a82c4055f4f4805337bbf160b02e3a00457db2340a6be097c11248515ae81b7b5b729330ed9c86a4bd0721a5ad9fbd]
+aws_credentials: ENCRYPTED[76d529d4c79c4c3ff212d38ce920e0be50501ed4c657128c487cf7d9742fb57395029871ccf697bbe07c0a481bbbab6b]
 
 task:
   ec2_instance:
