@@ -1,0 +1,8 @@
+aws_credentials: ENCRYPTED[c9a82c4055f4f4805337bbf160b02e3a00457db2340a6be097c11248515ae81b7b5b729330ed9c86a4bd0721a5ad9fbd]
+
+task:
+  ec2_instance:
+    image: ami-03790f6959fc34ef3
+    type: t2.micro
+    region: us-east-1
+  script: ./run-ci.sh
