@@ -2,8 +2,8 @@ aws_credentials: ENCRYPTED[76d529d4c79c4c3ff212d38ce920e0be50501ed4c657128c487cf
 
 task:
   ec2_instance:
-    image: ami-03790f6959fc34ef3
-    type: t2.micro
+    image: ami-0cd756558baef4206
+    type: c3.8xlarge
     region: us-east-1
   script:
     - apt-get update && apt-get dist-upgrade -yqq
